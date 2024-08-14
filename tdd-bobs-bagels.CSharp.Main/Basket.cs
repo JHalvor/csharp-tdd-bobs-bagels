@@ -9,8 +9,19 @@ namespace tdd_bobs_bagels.CSharp.Main
     public class Basket
     {
         private List<string> _items = new List<string>();
+        private int _basketSize;
+
+        public Basket(int size = 3)
+        {
+            _basketSize = size;
+        }
+
         public bool AddProduct(string product)
         {
+            if (_items.Count >= _basketSize)
+            {
+                return false;
+            }
             _items.Add(product);
             return true;
         }
