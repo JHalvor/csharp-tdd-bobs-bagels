@@ -49,8 +49,8 @@ I’d like to change the capacity of baskets.
 **Domain Model**:
 | Classes  | Methods                | Scenario                                                                     | Outputs      |
 |----------|------------------------|------------------------------------------------------------------------------|--------------|
-| `Basket` | `ChangeSize(int size)` | Change basket size to a increased size                                       | Bool (true)             |
-| `Basket` | `ChangeSize(int size)` | Change basket size to a decreased size smaller than number of elements in it | Bool (false)             |
+| `Basket` | `ChangeSize(int size)` | Change basket size to a increased size                                       | Bool (true)  |
+| `Basket` | `ChangeSize(int size)` | Change basket size to a decreased size smaller than number of elements in it | Bool (false) |
 
 
 ## User Story 5:

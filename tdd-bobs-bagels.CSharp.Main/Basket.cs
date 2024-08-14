@@ -26,6 +26,11 @@ namespace tdd_bobs_bagels.CSharp.Main
             return true;
         }
 
+        public bool ChangeSize(int newSize)
+        {
+            return false;
+        }
+
         public bool RemoveProduct(string product)
         {
             return _items.Remove(product);

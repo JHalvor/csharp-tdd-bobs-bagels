@@ -14,8 +14,6 @@ namespace csharp_tdd_bobs_bagels.tests
             bool result = basket.AddProduct("Very specific bagle");
 
             Assert.IsTrue(result);
-            Assert.That(result, Is.True);
-            Assert.That(result, Is.EqualTo(expected));
         }
 
         [Test]
@@ -27,9 +25,7 @@ namespace csharp_tdd_bobs_bagels.tests
 
             bool result = basket.RemoveProduct("Very specific bagle");
 
-            Assert.IsTrue(result);
             Assert.That(result, Is.True);
-            Assert.That(result, Is.EqualTo(expected));
         }
 
         [Test]
@@ -43,9 +39,38 @@ namespace csharp_tdd_bobs_bagels.tests
            
             bool result = basket.AddProduct("Very strange apple");
 
-            Assert.IsFalse(result);
-            Assert.That(result, Is.False);
             Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestChangeBasketSize()
+        {
+            Basket basket = new Basket();
+            bool expectedAddBeforeSizeIncrease = false;
+            bool expectedSizeIncrease = true;
+            bool expectedSizeDecreaseWhenFull = false;
+            bool expectedSizeDecreaseWhenNotFull = true;
+
+            basket.AddProduct("Very specific bagle");
+            basket.AddProduct("Very long Banana");
+            basket.AddProduct("Very good Bread");
+
+
+            bool resultAddBeforeSizeIncrease = basket.AddProduct("Very strange apple");
+            bool resultSizeIncrease = basket.ChangeSize(4);
+
+            basket.AddProduct("Very good coffee");
+
+            bool resultSizeDecreaseWhenFull = basket.ChangeSize(3);
+
+            basket.RemoveProduct("Very good coffee");
+
+            bool resultSizeDecreaseWhenNotFull = basket.ChangeSize(3);
+
+            Assert.That(resultAddBeforeSizeIncrease, Is.EqualTo(expectedAddBeforeSizeIncrease));
+            Assert.That(resultSizeIncrease, Is.EqualTo(expectedSizeIncrease));
+            Assert.That(resultSizeDecreaseWhenFull, Is.EqualTo(expectedSizeDecreaseWhenFull));
+            Assert.That(resultSizeDecreaseWhenNotFull, Is.EqualTo(expectedSizeDecreaseWhenNotFull));
         }
     }
 }
