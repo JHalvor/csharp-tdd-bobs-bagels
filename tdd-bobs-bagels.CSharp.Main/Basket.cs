@@ -8,16 +8,16 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
-        private List<string> items = new List<string>();
+        private List<string> _items = new List<string>();
         public bool AddProduct(string product)
         {
-            items.Add(product);
+            _items.Add(product);
             return true;
         }
 
-        public bool RemoveProduct()
+        public bool RemoveProduct(string product)
         {
-            return false;
+            return _items.Remove(product);
         }
     }
 }

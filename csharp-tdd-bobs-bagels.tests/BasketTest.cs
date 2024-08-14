@@ -10,7 +10,7 @@ namespace csharp_tdd_bobs_bagels.tests
         {
             Basket basket = new Basket();
             bool expected = true;
-            bool result = basket.AddProduct("Test");
+            bool result = basket.AddProduct("Very specific bagle");
             Assert.IsTrue(expected);
             Assert.That(result, Is.True);
             Assert.That(result, Is.EqualTo(expected));
@@ -20,10 +20,10 @@ namespace csharp_tdd_bobs_bagels.tests
         public void TestRemoveProduct()
         {
             Basket basket = new Basket();
-            basket.AddProduct("Test");
+            basket.AddProduct("Very specific bagle");
             bool expected = true;
 
-            bool result = basket.RemoveProduct();
+            bool result = basket.RemoveProduct("Very specific bagle");
 
             Assert.IsTrue(expected);
             Assert.That(result, Is.True);
