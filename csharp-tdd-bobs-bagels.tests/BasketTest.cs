@@ -82,7 +82,7 @@ namespace csharp_tdd_bobs_bagels.tests
 
             bool result = basket.RemoveProduct("Not very specific bagle");
 
-            Assert.That(result, Is.True);
+            Assert.That(result, Is.EqualTo(expected));
         }
     }
 }
