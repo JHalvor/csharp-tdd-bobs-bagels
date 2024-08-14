@@ -15,6 +15,17 @@ namespace csharp_tdd_bobs_bagels.tests
             Assert.That(result, Is.True);
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void TestRemoveProduct()
+        {
+            Basket basket = new Basket();
+            bool expected = true;
+            bool result = basket.RemoveProduct("Test");
+            Assert.IsTrue(expected);
+            Assert.That(result, Is.True);
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
 

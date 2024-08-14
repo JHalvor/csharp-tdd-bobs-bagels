@@ -14,5 +14,10 @@ namespace tdd_bobs_bagels.CSharp.Main
             items.Add(product);
             return true;
         }
+
+        public bool RemoveProduct(string v)
+        {
+            return false;
+        }
     }
 }
