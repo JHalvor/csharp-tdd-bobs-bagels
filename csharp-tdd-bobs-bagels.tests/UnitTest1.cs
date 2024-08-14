@@ -1,15 +1,21 @@
-namespace csharp_tdd_bobs_bagels.tests;
+using tdd_bobs_bagels.CSharp.Main;
 
-public class Tests
+namespace csharp_tdd_bobs_bagels.tests
 {
-    [SetUp]
-    public void Setup()
+    [TestFixture]
+    public class Baskettest
     {
-    }
-
-    [Test]
-    public void Test1()
-    {
-        Assert.Pass();
+        [Test]
+        public void TestAddProduct()
+        {
+            Basket basket = new Basket();
+            bool expected = true;
+            bool result = basket.AddProduct("Test");
+            Assert.IsTrue(expected);
+            Assert.That(result, Is.True);
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
+
+
