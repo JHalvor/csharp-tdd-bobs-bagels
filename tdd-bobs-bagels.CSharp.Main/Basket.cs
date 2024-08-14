@@ -10,7 +10,7 @@ namespace tdd_bobs_bagels.CSharp.Main
     {
         public bool AddProduct(string product)
         {
-            return false;
+            return true;
         }
     }
 }
