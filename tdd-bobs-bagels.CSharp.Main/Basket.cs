@@ -15,7 +15,7 @@ namespace tdd_bobs_bagels.CSharp.Main
             return true;
         }
 
-        public bool RemoveProduct(string v)
+        public bool RemoveProduct()
         {
             return false;
         }
