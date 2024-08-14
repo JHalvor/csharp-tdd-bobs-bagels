@@ -28,7 +28,12 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool ChangeSize(int newSize)
         {
-            return false;
+            if (newSize < 0 || newSize < _items.Count)
+            {
+                return false;
+            }
+            _basketSize = newSize;
+            return true;
         }
 
         public bool RemoveProduct(string product)
