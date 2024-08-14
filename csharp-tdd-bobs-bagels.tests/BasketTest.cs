@@ -72,6 +72,18 @@ namespace csharp_tdd_bobs_bagels.tests
             Assert.That(resultSizeDecreaseWhenFull, Is.EqualTo(expectedSizeDecreaseWhenFull));
             Assert.That(resultSizeDecreaseWhenNotFull, Is.EqualTo(expectedSizeDecreaseWhenNotFull));
         }
+
+        [Test]
+        public void TestRemoveProductThatDoesntExist()
+        {
+            Basket basket = new Basket();
+            basket.AddProduct("Very specific bagle");
+            bool expected = false;
+
+            bool result = basket.RemoveProduct("Not very specific bagle");
+
+            Assert.That(result, Is.True);
+        }
     }
 }
 
